@@ -9,8 +9,8 @@ export class CreatePostsTable1743995647152 implements MigrationInterface {
                 title TEXT NOT NULL,
                 content TEXT,
                 image_url TEXT,
-                created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMEsTAMP,
-                updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMEsTAMP,
+                created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
 
                 CONSTRAINT fk_user
                 FOREIGN KEY(user_id)
@@ -21,6 +21,6 @@ export class CreatePostsTable1743995647152 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query(`DROP TABLE posts`);
+    await queryRunner.query(`DROP TABLE posts;`);
   }
 }
